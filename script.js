@@ -1,10 +1,9 @@
 class LinkedList {
   constructor() {
     this.headNode = null;
-  }
-  
+  }  
 
-  append(value) {    
+  append(value) {
     const newNode = new Node(value);
     if (this.headNode === null) {
       this.headNode = newNode;
@@ -18,6 +17,17 @@ class LinkedList {
       }
       currentNode.nextNode = newNode;
       // console.log("Nodo actualizado a: ", currentNode);
+    }
+  }
+
+  prepend(value) {
+    const newNode = new Node(value);
+    if (this.headNode === null) {
+      this.headNode = newNode;
+    } else {
+      let currentNode = this.headNode;
+      this.headNode = newNode;
+      this.headNode.nextNode = currentNode;
     }
   }
 }
@@ -35,10 +45,7 @@ list.append(7);
 list.append(5);
 list.append(9);
 
+list.prepend(1);
 
+console.log(list.headNode);
 
-// == Tareas ==
-// Objeto con la lista [x]
-// Objeto con el nodo [x]
-// append(value)
-//   si no hay head crear nodo
