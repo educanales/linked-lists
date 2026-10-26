@@ -45,6 +45,26 @@ class LinkedList {
     }
     return listSize;
   }
+
+  head() {
+    if (!this.headNode) {
+      return undefined;
+    } else {
+      return this.headNode.value;
+    }
+  }
+
+  tail() {
+    if (!this.headNode) {
+      return undefined;
+    } else {
+      let currentNode = this.headNode;
+      while (currentNode.nextNode !== null) {
+        currentNode = currentNode.nextNode;
+      }
+      return currentNode.value;
+    }
+  }
 }
 
 class Node {
@@ -62,5 +82,5 @@ list.append(9);
 
 list.prepend(1);
 
-console.log(list.size());
+console.log(list.tail());
 
