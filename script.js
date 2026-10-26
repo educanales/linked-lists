@@ -94,6 +94,19 @@ class LinkedList {
       return currentHeadNode.value;
     }
   }
+
+  contains(value) {
+    if (!this.headNode) {
+      return false;
+    } else {
+      let currentNode = this.headNode;
+      while (currentNode.nextNode !== null) {
+        if (currentNode.value === value) break;
+        currentNode = currentNode.nextNode;
+      }
+      return currentNode.value === value ? true : false;
+    }
+  }
 }
 
 class Node {
@@ -111,6 +124,6 @@ list.append(9);
 
 // list.prepend(1);
 
-console.log(list.pop());
-console.log(list.at(0));
+console.log(list.contains(9));
+// console.log(list.at(0));
 
