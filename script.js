@@ -84,6 +84,16 @@ class LinkedList {
       }
     }
   }
+  
+  pop() {
+    if (!this.headNode) {
+      return undefined;
+    } else {
+      const currentHeadNode = this.headNode;
+      this.headNode = this.headNode.nextNode;
+      return currentHeadNode.value;
+    }
+  }
 }
 
 class Node {
@@ -101,5 +111,6 @@ list.append(9);
 
 // list.prepend(1);
 
-console.log(list.at(6));
+console.log(list.pop());
+console.log(list.at(0));
 
