@@ -65,6 +65,25 @@ class LinkedList {
       return currentNode.value;
     }
   }
+
+  at(index) {
+    if (!this.headNode) {
+      return "The list is empty";
+    } else {
+      let currentNode = this.headNode;
+      let currentIndex = 0;
+      while (currentNode.nextNode !== null) {
+        if (index === currentIndex) break;
+        currentNode = currentNode.nextNode;
+        currentIndex++;
+      }
+      if (index === currentIndex) {
+        return currentNode.value;
+      } else {
+        return undefined;
+      }
+    }
+  }
 }
 
 class Node {
@@ -80,7 +99,7 @@ list.append(7);
 list.append(5);
 list.append(9);
 
-list.prepend(1);
+// list.prepend(1);
 
-console.log(list.tail());
+console.log(list.at(6));
 
