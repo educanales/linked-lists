@@ -7,16 +7,12 @@ class LinkedList {
     const newNode = new Node(value);
     if (this.headNode === null) {
       this.headNode = newNode;
-      // console.log(this.headNode);
     } else {
       let currentNode = this.headNode;
-      // console.log("Nodo actual es: ", currentNode);
       while (currentNode.nextNode !== null) {
         currentNode = currentNode.nextNode;
-        // console.log(currentNode);
       }
       currentNode.nextNode = newNode;
-      // console.log("Nodo actualizado a: ", currentNode);
     }
   }
 
@@ -122,6 +118,20 @@ class LinkedList {
       return currentNode.value === value ? index : -1;
     }
   }
+
+  toString() {
+    let listString = "";
+    if (!this.headNode) {
+      return listString;
+    } else {
+      let currentNode = this.headNode;
+      while (currentNode.nextNode !== null) {
+        listString += `( ${currentNode.value} ) -> `;
+        currentNode = currentNode.nextNode;
+      }
+      return listString += `( ${currentNode.value} ) -> null`;
+    }
+  }
 }
 
 class Node {
@@ -139,6 +149,5 @@ list.append(9);
 
 // list.prepend(1);
 
-console.log(list.findIndex(7));
-// console.log(list.at(0));
+console.log(list.toString());
 
