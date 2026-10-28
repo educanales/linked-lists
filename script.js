@@ -107,6 +107,21 @@ class LinkedList {
       return currentNode.value === value ? true : false;
     }
   }
+
+  findIndex(value) {
+    let index = 0;
+    if (!this.headNode) {
+      return -1;
+    } else {
+      let currentNode = this.headNode;
+      while (currentNode.nextNode !== null) {
+        if (currentNode.value === value) break;
+        currentNode = currentNode.nextNode;
+        index++;
+      }
+      return currentNode.value === value ? index : -1;
+    }
+  }
 }
 
 class Node {
@@ -124,6 +139,6 @@ list.append(9);
 
 // list.prepend(1);
 
-console.log(list.contains(9));
+console.log(list.findIndex(7));
 // console.log(list.at(0));
 
