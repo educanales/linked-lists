@@ -1,4 +1,4 @@
-class LinkedList {
+export class LinkedList {
   constructor() {
     this.headNode = null;
   }  
@@ -141,13 +141,12 @@ class Node {
   }
 }
 
-const list = new LinkedList();
+// const list = new LinkedList();
 
-list.append(7);
-list.append(5);
-list.append(9);
-
+// list.append(7);
+// list.append(5);
+// list.append(9);
 // list.prepend(1);
 
-console.log(list.toString());
+// console.log(list.toString());
 
